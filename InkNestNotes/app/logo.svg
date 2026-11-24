@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#9333ea"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="url(#bg)"/>
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="url(#glow)"/>
+  <!-- nest -->
+  <path d="M52 170 Q128 244 204 170" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"/>
+  <path d="M78 178 Q128 218 178 178" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="9" stroke-linecap="round"/>
+  <!-- pen nib -->
+  <path d="M128 156 L95 114 C85 100 87 76 99 63 L111 48 L145 48 L157 63 C169 76 171 100 161 114 Z" fill="#fff"/>
+  <path d="M128 156 L128 106" stroke="#6d3fe8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="128" cy="94" r="8.5" fill="#6d3fe8"/>
+</svg>

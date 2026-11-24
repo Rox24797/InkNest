@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>InkNest Notes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="top">
+  <button id="brand" class="brand" title="Go to library">
+    <img src="logo.svg" alt="" width="30" height="30">
+    <span>InkNest <b>Notes</b></span>
+  </button>
+  <div id="nbTitleWrap" hidden>
+    <span class="crumb-sep">/</span>
+    <input id="nbTitle" spellcheck="false" maxlength="80" title="Rename notebook">
+  </div>
+  <div class="spacer"></div>
+  <span id="saveState" class="savestate"></span>
+  <button id="timerBtn" class="pill" title="Study timer (Pomodoro)">
+    <span data-i="timer" data-s="16"></span><span id="timerText">25:00</span>
+  </button>
+  <button id="themeBtn" class="icon-btn" title="Toggle dark mode"></button>
+  <button id="aboutBtn" class="icon-btn" title="About &amp; shortcuts"><span data-i="info"></span></button>
+</header>
+
+<!-- ============ LIBRARY ============ -->
+<main id="library">
+  <section class="hero">
+    <div>
+      <h1>Your notebooks</h1>
+      <p id="libSub">Write, sketch and study — everything saves automatically on this PC.</p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </section>
+  <section class="lib-bar">
+    <div class="search"><span data-i="search" data-s="18"></span>
+      <input id="search" placeholder="Search notebooks and typed notes…" spellcheck="false">
+    </div>
+    <div class="spacer"></div>
+    <button id="importBtn" class="btn ghost"><span data-i="upload" data-s="18"></span>Import</button>
+    <button id="newNb" class="btn primary"><span data-i="plus" data-s="18"></span>New notebook</button>
+  </section>
+  <section id="grid" class="grid"></section>
+</main>
+
+<!-- ============ EDITOR ============ -->
+<main id="editor" hidden>
+  <div class="tools-bar">
+    <div class="group" id="toolGroup"></div>
+    <div class="sep"></div>
+    <div class="group opts" id="optsGroup"></div>
+    <div class="spacer"></div>
+    <div class="group">
+      <button class="icon-btn" id="undoBtn" title="Undo (Ctrl+Z)"><span data-i="undo"></span></button>
+      <button class="icon-btn" id="redoBtn" title="Redo (Ctrl+Y)"><span data-i="redo"></span></button>
+      <div class="sep"></div>
+      <button class="icon-btn" id="zoomOut" title="Zoom out (Ctrl+-)"><span data-i="minus"></span></button>
+      <button class="zoom-lbl" id="zoomLbl" title="Fit page width (Ctrl+0)">100%</button>
+      <button class="icon-btn" id="zoomIn" title="Zoom in (Ctrl++)"><span data-i="plus"></span></button>
+      <div class="sep"></div>
+      <button class="chip" id="penOnly" title="Ignore finger touch so your palm never marks the page">Stylus only</button>
+      <button class="icon-btn" id="pageSet" title="Page template &amp; paper"><span data-i="layout"></span></button>
+      <button class="icon-btn" id="exportBtn" title="Export"><span data-i="download"></span></button>
+    </div>
+  </div>
+  <div class="work">
+    <aside id="pages">
+      <div class="pages-head"><span>Pages</span>
+        <button class="icon-btn sm" id="addPage" title="Add page (after current)"><span data-i="plus" data-s="18"></span></button>
+      </div>
+      <div id="thumbs"></div>
+    </aside>
+    <div id="scroll">
+      <div id="pageWrap">
+        <canvas id="cv"></canvas>
+        <canvas id="ov"></canvas>
+      </div>
+    </div>
+  </div>
+  <div id="statusbar"><span id="stPage"></span><span id="stHint"></span><span id="stZoom"></span></div>
+</main>
+
+<div id="ring"></div>
+<div id="toasts"></div>
+<input type="file" id="fileImg" accept="image/*" hidden>
+<input type="file" id="fileImport" accept=".inknest,.json,application/json" multiple hidden>
+
+<script src="app.js"></script>
+</body>
+</html>
